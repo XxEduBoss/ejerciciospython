@@ -3,6 +3,7 @@ import time
 from random import choice
 import os
 
+
 def carta1():
     carta = {
         "tipo": "",
@@ -30,6 +31,8 @@ def carta1():
             lista_cartas.append(carta)
 
     return lista_cartas
+
+
 def barajar():
 
     baraja = carta1()
@@ -41,6 +44,7 @@ def barajar():
         cartas_barajadas.insert(i, carta)
 
     return cartas_barajadas
+
 
 def sieteymedio(num_jugadores):
     limite = 7.5
@@ -58,7 +62,6 @@ def sieteymedio(num_jugadores):
         print("Tienes " + str(carta_aleatoria["valor"]) + " puntos")
 
         respuesta = input("¿Quieres otra carta?: ")
-
 
         while respuesta == "SI".lower():
 
@@ -123,9 +126,9 @@ def sieteymedio(num_jugadores):
         if diferencias[i] == punt:
             lista_ganadores.append(i)
 
-    for indice in lista_ganadores:
+    for i in lista_ganadores:
         if len(lista_ganadores) == 1:
-            print("Ha ganado el jugador " + str(lista_ganadores[0] + 1) + "\n" )
+            print("Ha ganado el jugador " + str(lista_ganadores[0] + 1) + "\n")
 
         else:
             print("Han quedado empate")
@@ -133,9 +136,10 @@ def sieteymedio(num_jugadores):
     jugador = 0
     for jug in range(num_jugadores):
 
-        print("El jugador " + str(jugador + 1) + " ha sacado un " + str(lista_puntuaje[0]) +", se ha quedado a " + str(lista[0]) + " puntos.")
+        print("El jugador " + str(jugador + 1) + " ha sacado un " + str(lista_puntuaje[0]) + ", se ha quedado a " + str(lista[0]) + " puntos.")
         jugador += 1
         lista.remove(lista[0])
         lista_puntuaje.remove(lista_puntuaje[0])
+
 
 (sieteymedio(2))
