@@ -111,39 +111,9 @@ def sieteymedio(num_jugadores):
             time.sleep(1.2)
             os.system('cls')
 
-    print(lista_puntuaje)
-    print(lista)
-
-    if min(lista):
-        print("Ha ganado el jugador " + str(min(lista)) + 1)
-
-    else:
-        print("Han quedado empate varios jugadores")
-
-
-
-
-    # Ahora hay que comparar las puntuaciones y decir quien es o quienes son los ganadores.
-    # Crear lista con puntuaciones punt_total_jugadores = []
-    # Restarle 7.5 a esas puntuaciones
-    # Ponerlas en positivo (obtener valor absoluto)
-    # El valor minimo min() es el ganador al quedar más cerca del 7.5
-
-    for p in punt_total_jugadores:  #creo diferencia como variable, que va a ser la caja donde me meta las operaciones
-        diferencia = p - 7.5
-        if diferencia < 0:
-            diferencia = diferencia*(-1)  #no pasa nada por pisarme la caja. De esta manera se guardan las operaciones
-        elif diferencia > 0:
-            diferencia = diferencia * 1
-        puntuacion_final.append(diferencia)
-
-#ahora tengo que obtener el minimo, localizar el índice del mínimo y llamar al índice del numero y del nombre de jugador para que sea ganador
-#en caso de empate, tiene que llamar a ambos jugadores.
-    minimo = min(puntuacion_final)
-
-#veo si hay empate en las puntuaciones, para ello comprobamos las diferencias y creamos una lista de ganadores.
+    minimo = min(lista)
     punt = minimo
-    diferencias = puntuacion_final
+    diferencias = lista
     lista_ganadores = []
 
     for i in range(0, len(diferencias)):
@@ -151,6 +121,17 @@ def sieteymedio(num_jugadores):
             lista_ganadores.append(i)
 
     for indice in lista_ganadores:
-        print("ganador/es: " + str(lista_nombres[indice]))
+        if len(lista_ganadores) == 1:
+            print("Ha ganado el jugador " + str(lista_ganadores[0] + 1))
+
+        else:
+            print("Han quedado empate")
+
+    jugador = 0
+    for jug in range(num_jugadores):
+
+        print("El jugador " + str(jugador + 1) + " se ha quedado a " + str(lista[0]) + " puntos")
+        jugador += 1
+        lista.remove(lista[0])
 
 (sieteymedio(2))
