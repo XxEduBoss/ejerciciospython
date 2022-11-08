@@ -133,8 +133,9 @@ def sieteymedio(num_jugadores):
     jugador = 0
     for jug in range(num_jugadores):
 
-        print("El jugador " + str(jugador + 1) + " se ha quedado a " + str(lista[0]) + " puntos")
+        print("El jugador " + str(jugador + 1) + " ha sacado un " + str(lista_puntuaje[0]) +", se ha quedado a " + str(lista[0]) + " puntos.")
         jugador += 1
         lista.remove(lista[0])
+        lista_puntuaje.remove(lista_puntuaje[0])
 
 (sieteymedio(2))
