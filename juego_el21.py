@@ -87,10 +87,4 @@ def el21(num_jugadores):
 
     print(montonjugador)
 
-
-
-
-
-
-
 el21(8)
