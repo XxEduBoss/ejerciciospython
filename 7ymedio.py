@@ -30,7 +30,6 @@ def carta1():
             lista_cartas.append(carta)
 
     return lista_cartas
-#
 def barajar():
 
     baraja = carta1()
@@ -42,8 +41,6 @@ def barajar():
         cartas_barajadas.insert(i, carta)
 
     return cartas_barajadas
-
-
 
 def sieteymedio(num_jugadores):
     limite = 7.5
@@ -67,7 +64,9 @@ def sieteymedio(num_jugadores):
 
             carta_aleatoria = choice(barajar())
 
-            print("Te ha tocado la carta " + str(carta_aleatoria["tipo"]) + " de " + str(carta_aleatoria["palo"]))
+            print("\nTe ha tocado la carta " + str(carta_aleatoria["tipo"]) + " de " + str(carta_aleatoria["palo"]))
+
+            barajar().remove(carta_aleatoria)
 
             suma_total += carta_aleatoria["valor"]
 
@@ -92,7 +91,11 @@ def sieteymedio(num_jugadores):
                 respuesta = input("¿Quieres otra carta?: ")
 
         else:
-            print("Te has plantado con " + str(suma_total) + " puntos")
+            if suma_total == 1:
+                print("Te has plantado con " + str(suma_total) + " punto")
+
+            else:
+                print("Te has plantado con " + str(suma_total) + " puntos")
 
             lista_puntuaje.append(suma_total)
 
@@ -122,7 +125,7 @@ def sieteymedio(num_jugadores):
 
     for indice in lista_ganadores:
         if len(lista_ganadores) == 1:
-            print("Ha ganado el jugador " + str(lista_ganadores[0] + 1))
+            print("Ha ganado el jugador " + str(lista_ganadores[0] + 1) + "\n" )
 
         else:
             print("Han quedado empate")
